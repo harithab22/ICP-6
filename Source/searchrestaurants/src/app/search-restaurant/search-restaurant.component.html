@@ -1,0 +1,69 @@
+<div class="parent-container" style="text-align: center;">
+  <div class="card container child-container" style="text-align: center;">
+    <div class="card-header" style="text-align: center;"> <h2>Hello, Welcome to <b>Find Your Recipe!!!
+    </b></h2>
+      <span class="desc">FInd Your Recipe is a Mashup Web Application which is built using <i> Foursquare & Edamam's Recipe Search API </i> . This application find Recipe and Place to find that Food.</span><br><br><br></div>
+    <div class="card-body">
+    <form style="text-align: center;">
+      <div class="form-group">
+        <div class="form-group col-lg-9 col-lg-offset-3 input-group">
+          <input type="text" class="form-control" placeholder="Recipe name" #recipe>
+          <span class="input-group-addon">               </span>
+          <input type="text" class="form-control" placeholder="Place" #place>
+          <span class="input-group-addon">               </span>
+
+        </div><br>
+        <button type="button" class="btn btn-primary col-lg-3 col-lg-offset-4 " (click)="getVenues()">Display Recipes</button>
+        <span class="input-group-addon">-</span>
+        <button type="button" class="btn btn-primary col-lg-3 col-lg-offset-4 " (click)="getInit()">Display Nearby Restaurants</button><br>
+
+      </div>
+    </form>
+    </div>
+  </div>
+</div><br><br>
+
+
+<div class="parent-container" style="text-align: center;">
+      <div class="card container child-container col-6" style="text-align: center;">
+        <div class="card-header desc"><b>List of Restaurants</b></div>
+        <div class="card-body">
+
+          <table>
+          <tr *ngFor="let venue of venueList" class="list-group-item clearfix">
+
+                <td>
+            <div>
+              <p class="list-group-item-heading">{{ venue.name }}</p>
+            </div>
+                </td>
+
+            <td> {{venue.location.formattedAddress[0]}},{{venue.location.formattedAddress[1]}},{{venue.location.formattedAddress[2]}}</td>
+
+
+            <td>
+            <span>
+             <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}&daddr={{venue.location.formattedAddress[0]}},{{venue.location.formattedAddress[1]}},{{venue.location.formattedAddress[2]}}">
+             </a></span></td></tr>
+          </table>
+
+          <table>
+            <tr *ngFor="let recipe of recipeList" class="list-group-item clearfix">
+
+              <td>
+                <div>
+                  <p class="list-group-item-heading">{{ recipe.name }}</p>
+                </div>
+              </td>
+
+              <td> <a href="{{recipe.url}}">{{recipe.url}}</a></td>
+
+
+              <td>
+            <span>
+             <img src="{{recipe.icon}}" width="200px" height="200px"></span></td></tr>
+          </table>
+
+        </div>
+      </div>
+    </div>

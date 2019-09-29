@@ -1,0 +1,9 @@
+.image{
+  height:60em; background-size:cover; width:100%;
+  background-image:url('https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1012305/1360/906/m1/fpnw/wm1/tyhlpnowodzm2wpsksuz240scqzybbtjxpulre9zs8qugxsic4zdhwfixlgupu5u-.jpg?1456015760&s=49be34ec1d74f1bd0afe052d2ec124f3');
+  background-position:50% 50%;
+}
+
+div {
+  display: block;
+}
